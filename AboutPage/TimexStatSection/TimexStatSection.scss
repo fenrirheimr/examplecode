@@ -1,0 +1,72 @@
+@import '~src/styles/mixins';
+@import '~src/styles/variables';
+@import '~src/styles/fonts';
+
+.root-timex-stat-section {
+  @include flex(column, flex-start, center);
+  width: 100%;
+  max-width: 1960px;
+  margin: 0 auto 200px;
+  position: relative;
+  overflow: hidden;
+  .timex-stat-section {
+    width: 100%;
+    max-width: 1200px;
+    .title {
+      @include font-style($font-family: 'Cera Pro', $font-weight: 500, $font-size: 84px, $line-height: 101px, $color: #010005);
+      margin-bottom: 90px;
+      ::v-deep {
+        .bordered {
+          position: relative;
+          >span {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: #5825EB;
+            border-radius: 8px;
+            width: 100%;
+            height: 7px;
+            z-index: -1;
+            >span {
+              position: relative;
+            }
+            @include screen-max-width(500px) {
+              height: 4px;
+              border-radius: 4px;
+              bottom: 1px;
+            }
+          }
+          @include screen-max-width(500px) {
+            margin-left: 40px;
+            &:before {
+              left: -40px;
+            }
+          }
+        }
+      }
+      @include screen-max-width(768px) {
+        @include font-style($font-family: 'Cera Pro', $font-weight: 500, $font-size: 65px, $line-height: 75px, $color: #010005);
+      }
+      @include screen-max-width(500px) {
+        @include font-style($font-family: 'Cera Pro', $font-weight: 500, $font-size: 30px, $line-height: 36px, $color: #010005);
+        margin-bottom: 60px;
+      }
+    }
+    .timex-stats {
+      @include flex(row, space-between, flex-start);
+      flex-wrap: wrap;
+      @include screen-max-width(768px) {
+        flex-direction: column;
+      }
+    }
+  }
+  @include screen-max-width(1200px) {
+    padding: 0 30px;
+  }
+  @include screen-max-width(1024px) {
+    margin-bottom: 150px;
+  }
+  @include screen-max-width(500px) {
+    margin-bottom: 100px;
+  }
+}

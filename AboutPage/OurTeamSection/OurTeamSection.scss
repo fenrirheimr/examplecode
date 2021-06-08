@@ -1,0 +1,70 @@
+@import '~src/styles/mixins';
+@import '~src/styles/variables';
+@import '~src/styles/fonts';
+
+.root-our-team-section {
+  @include flex(column, flex-start, stretch);
+  background: #fff;
+  width: 100%;
+  position: relative;
+  z-index: 8;
+  margin-bottom: 200px;
+  .our-team-section {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .slider {
+    @include flex(row, flex-start, stretch);
+    padding: 0 0 40px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    transition: all 0.2s;
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    &.active {
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+    }
+    @include screen-max-width(2560px) {
+      padding-left: 643px;
+    }
+    @include screen-max-width(1960px) {
+      padding-left: 323px;
+    }
+    @include screen-max-width(1440px) {
+      padding-left: 83px;
+    }
+    @include screen-max-width(1200px) {
+      padding-left: 0;
+      margin-left: -30px;
+    }
+  }
+  ::v-deep {
+    .scroll-items-partial {
+      .description {
+        max-width: 1200px;
+      }
+    }
+    .all-team {
+      @include font-style($font-family: 'Cera Pro', $font-weight: normal, $font-size: 18px, $line-height: 23px, $color: rgba(1, 0, 5, 0.7));
+      width: 100%;
+      margin: 40px auto 0;
+      max-width: 1200px;
+    }
+  }
+  @include screen-max-width(1200px) {
+    padding: 0 30px;
+  }
+  @include screen-max-width(1024px) {
+    margin-bottom: 150px;
+  }
+  @include screen-max-width(1024px) {
+    margin-bottom: 70px;
+  }
+}

@@ -1,0 +1,45 @@
+@import '~src/styles/mixins';
+@import '~src/styles/variables';
+@import '~src/styles/fonts';
+
+.root-timex-stat-item {
+  .timex-stat-item {
+    @include flex(column, space-between, flex-start);
+    width: 360px;
+    margin-bottom: 50px;
+    .firstline {
+      @include font-style($font-family: 'Cera Pro', $font-weight: normal, $font-size: 18px, $line-height: 23px, $color: rgba(1, 0, 5, 0.4));
+      margin-bottom: 15px;
+      @include screen-max-width(768px) {
+        margin-bottom: 10px;
+      }
+      ::v-deep {
+        .num {
+          @include font-style($font-family: 'Cera Pro', $font-weight: 500, $font-size: 44px, $line-height: 48px, $color: #5825EB);
+          @include screen-max-width(1200px) {
+            display: block;
+          }
+          @include screen-max-width(768px) {
+            display: inline;
+          }
+          @include screen-max-width(500px) {
+            @include font-style($font-family: 'Cera Pro', $font-weight: 500, $font-size: 24px, $line-height: 28px, $color: #5825EB);
+          }
+        }
+      }
+    }
+    .secondline {
+      color: rgba(1, 0, 5, 0.7);
+    }
+  }
+  @include screen-max-width(1200px) {
+    width: 33%;
+  }
+  @include screen-max-width(768px) {
+    width: 100%;
+    margin-top: 40px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

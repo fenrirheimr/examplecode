@@ -1,0 +1,8 @@
+<section class="root-timex-stat-section">
+  <div class="timex-stat-section">
+	  <h1 class="title" v-html="'Time <span class=\'bordered\'>Exchange<span></span></span>'"></h1>
+	  <div class="timex-stats">
+		  <timex-stat-item :item="item" v-for="(item, i) in featuresItems" :key="i"/>
+	  </div>
+  </div>
+</section>

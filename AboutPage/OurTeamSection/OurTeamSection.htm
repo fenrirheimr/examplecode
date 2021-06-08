@@ -1,0 +1,10 @@
+<section class="root-our-team-section">
+	<div class="our-team-section">
+		<scroll-items-partial :content="content" class="fullwidth">
+			<div class="slider" slot="items">
+				<our-team-item :item="item" v-for="(item, i) in membersItems" :key="i" />
+			</div>
+		</scroll-items-partial>
+		<div class="all-team">{{ i18nSection('aboutpageOurTeamOthers') }}</div>
+	</div>
+</section>
