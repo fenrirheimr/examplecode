@@ -1,0 +1,98 @@
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+.root-tx-simple-select {
+  width: 100%;
+  position: relative;
+  .group {
+    @include flex(row, space-between, center);
+    .group-select.focused {
+      border-color: #5F4CBA;
+    }
+    .group-select {
+      @include flex(row, space-between, center);
+      width: 100%;
+      .select-result {
+        @include flex(row, space-between, flex-end);
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        .text {
+          @include font-style($font-family: 'Cera Pro', $font-weight: 500, $font-size: 14px, $line-height: 15px);
+          text-transform: uppercase;
+        }
+        .svg-icon {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  .underline-text {
+    color: #fd4e51;
+  }
+  .options {
+    @include flex(column, flex-start, flex-start);
+    padding: 6px 0;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+    border-radius: 0 0 3px 3px;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    max-width: 396px;
+    z-index: 999;
+    max-height: 229px;
+    overflow-y: auto;
+    .option {
+      @include font-style($font-family: 'Cera Pro', $font-weight: 400, $font-size: 1rem, $line-height: 15px);
+      padding: 12px;
+      width: 100%;
+      &:hover {
+        cursor: pointer;
+        background-color: #ECECEF;
+      }
+    }
+  }
+  &.light {
+    .group {
+      .group-select {
+        .select-result {
+          .text {
+            color: #010005;
+          }
+        }
+      }
+    }
+    .options {
+      background: #fff;
+      .option {
+        color: #0A0B11;
+        &:hover {
+          color: #5825EB;
+          background: #F6F5F0;
+        }
+      }
+    }
+  }
+  &.dark {
+    .group {
+      .group-select {
+        .select-result {
+          .text {
+            color: #fff;
+          }
+        }
+      }
+    }
+    .options {
+      background: #080808;
+      .option {
+        color: #fff;
+        &:hover {
+          color: #7D47FF;
+          background: #141414;
+        }
+      }
+    }
+  }
+}

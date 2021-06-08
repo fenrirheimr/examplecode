@@ -1,0 +1,22 @@
+<div class="root-tx-simple-select"
+     :class="{
+    'dark': theme === 'dark',
+    'light': theme === 'light',
+  }">
+  <div class="group">
+    <div class="group-select" :class="{'focused': optionsEnabled}" v-click-outside="() => closeOptions()">
+    <div class="select-result" @click="openOptions">
+      <div class="text">
+	      {{ title }}
+      </div>
+      <svgicon :color="theme === 'dark' ? '' : '#010005'" width="20" height="20" class="icon-down" name="arrow-down" v-if="!optionsEnabled"/>
+      <svgicon :color="theme === 'dark' ? '' : '#010005'" width="20" height="20" class="icon-up" name="arrow-up" v-else/>
+    </div>
+  </div>
+  </div>
+  <div class="options" v-if="optionsEnabled">
+	  <div class="option" :class="{'active': item.symbol === value.symbol}" v-for="item in options" @click="changeSelected(item)">
+		  {{item.title }}
+	  </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="root-about-page">
+  <nav-bar />
+  <main class="about-page">
+	  <promo-section />
+	  <crypto-punk-section />
+	  <timex-stat-section />
+	  <our-team-section />
+	  <partners-section :partners="partners" />
+	  <contacts-section>
+		  <div slot="buttons" class="button-wrapper">
+			  <tx-button
+				  :title="i18nSection('aboutpageGoToTechnology')"
+				  theme="dark"
+				  size="medium"
+				  @click="handleTechnology"
+			  />
+		  </div>
+	  </contacts-section>
+  </main>
+	<public-footer />
+</div>
